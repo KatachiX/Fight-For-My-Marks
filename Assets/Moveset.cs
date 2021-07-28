@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ASM : MonoBehaviour
+public class Moveset : MonoBehaviour
 {
     public float moveSpeed;
 
@@ -23,7 +23,7 @@ public class ASM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pathIsClear || cc.IsTouchingLayers(enemy))
+        if (pathIsClear && !cc.IsTouchingLayers(enemy))
         {
             Move();
         }
