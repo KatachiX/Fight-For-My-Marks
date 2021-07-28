@@ -14,6 +14,7 @@ public class Moveset : MonoBehaviour
     public Rigidbody2D rb;
     public CircleCollider2D cc;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +30,24 @@ public class Moveset : MonoBehaviour
         }
         else
         {
-            
+
         }
     }
 
     void Move()
     {
         rb.velocity = new Vector2(moveSpeed * Time.fixedDeltaTime, rb.velocity.y);
+    }
+
+    public void OnHit()
+    {
+        pathIsClear = false;
+        rb.velocity = new Vector2(-(2 * moveSpeed * Time.fixedDeltaTime), rb.velocity.y);
+        Invoke("ResetOnHit", 0.5f);
+    }
+
+    void ResetOnHit()
+    {
+        pathIsClear = true;
     }
 }

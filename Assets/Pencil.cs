@@ -22,7 +22,9 @@ public class Pencil : MonoBehaviour
         Pencil _pencil = col.collider.GetComponent<Pencil>();
         if (_pencil != null)
         {
-            _pencil.TakeDamage(stats.damage);
+            _pencil.TakeDamage(stats.damage); // Enemy pencil takes damage, not this pencil
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
         }
     }
 
