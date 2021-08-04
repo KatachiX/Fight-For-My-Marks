@@ -1012,6 +1012,10 @@ MonoBehaviour:
   stats:
     curHealth: 100
     damage: 10
+  team:
+    serializedVersion: 2
+    m_Bits: 1024
+  hit: {fileID: 7861014667311199741, guid: baefed3ac4532854393b94f8c5716b4c, type: 3}
 --- !u!95 &1131732596
 Animator:
   serializedVersion: 3
@@ -1499,10 +1503,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 0.62663674, b: 0, a: 1}
+    m_PressedColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1553,8 +1557,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 984313913663647973, guid: f2522f17cb1a91b49b046080e962f53e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1598,6 +1602,7 @@ GameObject:
   - component: {fileID: 2145537629}
   - component: {fileID: 2145537628}
   - component: {fileID: 2145537633}
+  - component: {fileID: 2145537634}
   m_Layer: 11
   m_Name: Enemy_Pencil
   m_TagString: GM
@@ -1654,7 +1659,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1701,9 +1706,9 @@ SpriteRenderer:
   m_SortingLayerID: -163712117
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: -9009799590439946037, guid: f2522f17cb1a91b49b046080e962f53e, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -1741,3 +1746,26 @@ MonoBehaviour:
   stats:
     curHealth: 100
     damage: 10
+  team:
+    serializedVersion: 2
+    m_Bits: 2048
+  hit: {fileID: 7861014667311199741, guid: baefed3ac4532854393b94f8c5716b4c, type: 3}
+--- !u!95 &2145537634
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145537627}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03934ed1901d2f649814c8d93e2fcfd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

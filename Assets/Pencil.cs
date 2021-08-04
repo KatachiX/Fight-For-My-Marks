@@ -15,11 +15,16 @@ public class Pencil : MonoBehaviour
     private bool disableAtk = false;
     private WaitForSeconds atkCd = new WaitForSeconds(5f);
 
+    public LayerMask team;
+
+    public GameObject hit;
+
     void OnCollisionStay2D(Collision2D col) 
     {
         Pencil _pencil = col.collider.GetComponent<Pencil>();
         if (_pencil != null && !disableAtk)
         {
+            hitAnimation(_pencil.transform);
             _pencil.TakeDamage(stats.damage); // Enemy pencil takes damage, not this pencil
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
@@ -29,9 +34,15 @@ public class Pencil : MonoBehaviour
         Base _base = col.collider.GetComponent<Base>();
         if (_base != null && !disableAtk)
         {
+            hitAnimation(_base.transform);
             _base.TakeDamage(stats.damage * 2); // Enemy base takes damage
             StartCoroutine(startAtkCd());
         }
+    }
+
+    void hitAnimation(Transform t)
+    {
+        Instantiate(hit, t.position, t.rotation);
     }
 
     IEnumerator startAtkCd()
