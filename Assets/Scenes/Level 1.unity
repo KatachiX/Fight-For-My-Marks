@@ -869,7 +869,7 @@ GameObject:
   - component: {fileID: 1131732594}
   - component: {fileID: 1131732595}
   m_Layer: 10
-  m_Name: Ally
+  m_Name: Ally_Pencil
   m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,6 +1200,7 @@ GameObject:
   - component: {fileID: 1353496402}
   - component: {fileID: 1353496401}
   - component: {fileID: 1353496400}
+  - component: {fileID: 1353496403}
   m_Layer: 11
   m_Name: Enemy Base
   m_TagString: Untagged
@@ -1288,6 +1289,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1353496403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353496399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f591a7ef699a14591c17b23becedb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    curHealth: 200
 --- !u!1 &1773450897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1314,7 @@ GameObject:
   - component: {fileID: 1773450900}
   - component: {fileID: 1773450899}
   - component: {fileID: 1773450898}
+  - component: {fileID: 1773450901}
   m_Layer: 10
   m_Name: Ally Base
   m_TagString: Untagged
@@ -1387,6 +1403,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773450901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773450897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f591a7ef699a14591c17b23becedb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+    curHealth: 200
 --- !u!1 &1996982441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1579,7 @@ GameObject:
   - component: {fileID: 2145537628}
   - component: {fileID: 2145537633}
   m_Layer: 11
-  m_Name: Enemy
+  m_Name: Enemy_Pencil
   m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

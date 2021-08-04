@@ -12,20 +12,35 @@ public class Pencil : MonoBehaviour
 
     public PencilStats stats = new PencilStats();
     
-    private bool disableAtk;
-    private float atkCd = 0f;
-    private float cdTime = 1.5f;
+    private bool disableAtk = false;
+    private WaitForSeconds atkCd = new WaitForSeconds(5f);
 
-    void OnCollisionEnter2D(Collision2D col) 
+    void OnCollisionStay2D(Collision2D col) 
     {
-
         Pencil _pencil = col.collider.GetComponent<Pencil>();
-        if (_pencil != null)
+        if (_pencil != null && !disableAtk)
         {
             _pencil.TakeDamage(stats.damage); // Enemy pencil takes damage, not this pencil
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
+            StartCoroutine(startAtkCd());
         }
+        
+        Base _base = col.collider.GetComponent<Base>();
+        if (_base != null && !disableAtk)
+        {
+            _base.TakeDamage(stats.damage * 2); // Enemy base takes damage
+            StartCoroutine(startAtkCd());
+        }
+    }
+
+    IEnumerator startAtkCd()
+    {
+        disableAtk = true;
+
+        yield return atkCd;
+
+        disableAtk = false;
     }
 
     private void resetAtk()
