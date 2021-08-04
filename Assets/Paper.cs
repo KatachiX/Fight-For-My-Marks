@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pencil : MonoBehaviour
+public class Paper : MonoBehaviour
 {
     [System.Serializable]
-    public class PencilStats {
-        public int curHealth = 100;
-        public int damage = 10;
+    public class PaperStats {
+        public int curHealth = 200;
+        public int damage = 6;
     }
 
-    public PencilStats stats = new PencilStats();
+    public PaperStats stats = new PaperStats();
     
     private bool disableAtk = false;
-    private WaitForSeconds atkCd = new WaitForSeconds(5f);
+    private WaitForSeconds atkCd = new WaitForSeconds(3f);
 
     public LayerMask team;
 
@@ -33,7 +33,7 @@ public class Pencil : MonoBehaviour
         if (_paper != null && !disableAtk)
         {
             hitAnimation(_paper.transform);
-            _paper.TakeDamage(stats.damage * 2); // Enemy paper takes damage * 2
+            _paper.TakeDamage(stats.damage); // Enemy paper takes damage
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());
@@ -43,7 +43,7 @@ public class Pencil : MonoBehaviour
         if (_pencil != null && !disableAtk)
         {
             hitAnimation(_pencil.transform);
-            _pencil.TakeDamage(stats.damage); // Enemy pencil takes damage, not this pencil
+            _pencil.TakeDamage(stats.damage / 2); // Enemy pencil takes damage / 2
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());

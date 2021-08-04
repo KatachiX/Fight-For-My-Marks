@@ -26,7 +26,7 @@ public class SpawnPencil : MonoBehaviour, IClickable
 
     public void Click()
     {
-        Debug.Log("Run");
+        Debug.Log("Spawn Pencil");
         if (StaminaBar.instance.UseStamina(20))
         {
             spawnPencil();
