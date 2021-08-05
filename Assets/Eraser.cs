@@ -13,7 +13,7 @@ public class Eraser : MonoBehaviour
     public EraserStats stats = new EraserStats();
     
     private bool disableAtk = false;
-    private WaitForSeconds atkCd = new WaitForSeconds(6f);
+    private WaitForSeconds atkCd = new WaitForSeconds(5f);
 
     public LayerMask team;
 

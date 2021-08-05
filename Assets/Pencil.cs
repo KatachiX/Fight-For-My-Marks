@@ -33,7 +33,7 @@ public class Pencil : MonoBehaviour
         if (_paper != null && !disableAtk)
         {
             hitAnimation(_paper.transform);
-            _paper.TakeDamage(stats.damage * 2); // Enemy paper takes damage * 2
+            _paper.TakeDamage(stats.damage * 3); // Enemy paper takes damage * 3
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());

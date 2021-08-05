@@ -33,7 +33,7 @@ public class Paper : MonoBehaviour
         if (_eraser != null && !disableAtk)
         {
             hitAnimation(_eraser.transform);
-            _eraser.TakeDamage(stats.damage * 2); // Enemy Eraser takes damage * 2
+            _eraser.TakeDamage(stats.damage * 3); // Enemy Eraser takes damage * 3
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());
