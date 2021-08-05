@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ScoreManager : MonoBehaviour
+public class MoneyManager : MonoBehaviour
 {
-    public static ScoreManager instance;
+    public static MoneyManager instance;
     public TextMeshProUGUI text;
     int money;
      
@@ -23,5 +23,20 @@ public class ScoreManager : MonoBehaviour
     {
         money += moneyValue;
         text.text = money.ToString();
+    }
+
+    public bool UseMoney (int moneyValue)
+    {
+        if (moneyValue < money)
+        {
+            money -= moneyValue;
+            text.text = money.ToString();
+            return true;
+        }
+        else
+        {
+            Debug.Log("Not enough money");
+            return false;
+        }
     }
 }

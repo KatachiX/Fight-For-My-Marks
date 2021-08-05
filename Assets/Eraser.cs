@@ -74,11 +74,6 @@ public class Eraser : MonoBehaviour
         disableAtk = false;
     }
 
-    private void resetAtk()
-    {
-        disableAtk = false;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -97,7 +92,7 @@ public class Eraser : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
-            ScoreManager.instance.ChangeMoney(40);
+            MoneyManager.instance.ChangeMoney(40);
         }
     }
 }
