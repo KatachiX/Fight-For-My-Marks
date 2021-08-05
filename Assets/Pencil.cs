@@ -39,11 +39,21 @@ public class Pencil : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
+                Eraser _eraser = col.collider.GetComponent<Eraser>();
+        if (_eraser != null && !disableAtk)
+        {
+            hitAnimation(_eraser.transform);
+            _eraser.TakeDamage(stats.damage / 2); // Enemy Eraser takes damage / 2
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
+            StartCoroutine(startAtkCd());
+        }
+
         Pencil _pencil = col.collider.GetComponent<Pencil>();
         if (_pencil != null && !disableAtk)
         {
             hitAnimation(_pencil.transform);
-            _pencil.TakeDamage(stats.damage); // Enemy pencil takes damage, not this pencil
+            _pencil.TakeDamage(stats.damage); // Enemy pencil takes damage
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());

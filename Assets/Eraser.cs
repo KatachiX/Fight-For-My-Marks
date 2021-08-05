@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Paper : MonoBehaviour
+public class Eraser : MonoBehaviour
 {
     [System.Serializable]
-    public class PaperStats {
-        public int curHealth = 200;
-        public int damage = 6;
+    public class EraserStats {
+        public int curHealth = 70;
+        public int damage = 20;
     }
 
-    public PaperStats stats = new PaperStats();
+    public EraserStats stats = new EraserStats();
     
     private bool disableAtk = false;
-    private WaitForSeconds atkCd = new WaitForSeconds(3f);
+    private WaitForSeconds atkCd = new WaitForSeconds(6f);
 
     public LayerMask team;
 
@@ -29,31 +29,31 @@ public class Paper : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
-        Eraser _eraser = col.collider.GetComponent<Eraser>();
-        if (_eraser != null && !disableAtk)
-        {
-            hitAnimation(_eraser.transform);
-            _eraser.TakeDamage(stats.damage * 2); // Enemy Eraser takes damage * 2
-            Moveset _moveset = col.collider.GetComponent<Moveset>();
-            _moveset.OnHit(); 
-            StartCoroutine(startAtkCd());
-        }
-
         Pencil _pencil = col.collider.GetComponent<Pencil>();
         if (_pencil != null && !disableAtk)
         {
             hitAnimation(_pencil.transform);
-            _pencil.TakeDamage(stats.damage / 2); // Enemy pencil takes damage / 2
+            _pencil.TakeDamage(stats.damage * 2); // Enemy pencil takes damage * 2
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());
         }
 
-                Paper _paper = col.collider.GetComponent<Paper>();
+        Paper _paper = col.collider.GetComponent<Paper>();
         if (_paper != null && !disableAtk)
         {
             hitAnimation(_paper.transform);
-            _paper.TakeDamage(stats.damage); // Enemy paper takes damage
+            _paper.TakeDamage(stats.damage); // Enemy paper takes damage / 2
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
+            StartCoroutine(startAtkCd());
+        }
+
+        Eraser _eraser = col.collider.GetComponent<Eraser>();
+        if (_eraser != null && !disableAtk)
+        {
+            hitAnimation(_eraser.transform);
+            _eraser.TakeDamage(stats.damage); // Enemy Eraser takes damage
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());
