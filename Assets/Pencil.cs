@@ -97,6 +97,7 @@ public class Pencil : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
+            ScoreManager.instance.ChangeMoney(30);
         }
     }
 }

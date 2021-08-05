@@ -33,7 +33,7 @@ public class Eraser : MonoBehaviour
         if (_pencil != null && !disableAtk)
         {
             hitAnimation(_pencil.transform);
-            _pencil.TakeDamage(stats.damage * 2); // Enemy pencil takes damage * 2
+            _pencil.TakeDamage(stats.damage * 3); // Enemy pencil takes damage * 3
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());
@@ -97,6 +97,7 @@ public class Eraser : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
+            ScoreManager.instance.ChangeMoney(40);
         }
     }
 }
