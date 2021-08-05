@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8ab768dbddde4ad458e18a372e64095b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - enemyPencilPrefab: {fileID: 3597334283108421755, guid: 7712607ff760d124099e9fa1eb9b58c0, type: 3}
+  - enemyPaperPrefab: {fileID: 7831306352216620615, guid: 3c68d9c854481f3469266ab49f14b448, type: 3}
+  - enemyEraserPrefab: {fileID: 1550134834031458058, guid: 5b56fbbf5e63eda42bb7cae8aaea4831, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
