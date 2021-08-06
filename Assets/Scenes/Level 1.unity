@@ -1820,7 +1820,7 @@ MonoBehaviour:
   enemyPencilPrefab: {fileID: 3597334283108421755, guid: 7712607ff760d124099e9fa1eb9b58c0, type: 3}
   enemyPaperPrefab: {fileID: 7831306352216620615, guid: 3c68d9c854481f3469266ab49f14b448, type: 3}
   enemyEraserPrefab: {fileID: 1550134834031458058, guid: 5b56fbbf5e63eda42bb7cae8aaea4831, type: 3}
-  spawnTime: 5
+  spawnTime: 8
 --- !u!1 &1416316393
 GameObject:
   m_ObjectHideFlags: 0

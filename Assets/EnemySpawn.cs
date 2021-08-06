@@ -8,7 +8,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPencilPrefab;
     public GameObject enemyPaperPrefab;
     public GameObject enemyEraserPrefab;
-    public float spawnTime = 5.0f;
+    public float spawnTime = 8.0f;
     // Start is called before the first frame update
     void Start()
     {
