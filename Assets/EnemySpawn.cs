@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Level 1
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyPencilPrefab;
@@ -28,17 +29,39 @@ public class EnemySpawn : MonoBehaviour
     }
 
     IEnumerator spawnWave(){
-        for(int i = 0; i < 3; i++){
-            yield return new WaitForSeconds(spawnTime);
-            spawnEnemyPencil();
+        for(int a = 0; a < 5; a++){
+            for(int i = 0; i < 5; i++){
+                if(a < 2){
+                    yield return new WaitForSeconds(spawnTime);
+                    spawnEnemyPencil();
+                }
+                else{
+                    yield return new WaitForSeconds(spawnTime + a);
+                    spawnEnemyPencil();
+                }
+            }
+            for(int i = 0; i < 2; i++){
+                yield return new WaitForSeconds(spawnTime + 1.5f);
+                spawnEnemyPaper();
+            }
+            for(int i = 0; i < 1; i++){
+                yield return new WaitForSeconds(spawnTime);
+                spawnEnemyEraser();
+            }
         }
-        for(int i = 0; i < 2; i++){
-            yield return new WaitForSeconds(spawnTime);
+        while(true){
+            for(int i = 0; i < 4; i++){
+                yield return new WaitForSeconds(spawnTime + 2.0f);
+                spawnEnemyPencil();
+            }
+            for(int i = 0; i < 2; i++){
+            yield return new WaitForSeconds(spawnTime + 3.0f);
             spawnEnemyPaper();
-        }
-        for(int i = 0; i < 1; i++){
-            yield return new WaitForSeconds(spawnTime);
+            }
+            for(int i = 0; i < 1; i++){
+            yield return new WaitForSeconds(spawnTime + 4.0f);
             spawnEnemyEraser();
+            }
         }
     }
 }
