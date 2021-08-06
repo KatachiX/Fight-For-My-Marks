@@ -12,8 +12,4 @@ public class GameMaster : MonoBehaviour {
             gm = this;
         }
     }
-
-    public static void KillPencil(Pencil pencil) {
-        Destroy (pencil.gameObject);
-    }
 }
