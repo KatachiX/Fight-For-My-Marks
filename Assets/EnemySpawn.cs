@@ -8,11 +8,20 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPencilPrefab;
     public GameObject enemyPaperPrefab;
     public GameObject enemyEraserPrefab;
+    public GameObject enemyBase;
     public float spawnTime = 8.0f;
     // Start is called before the first frame update
+    public bool spawnEraserOnHit = false;
     void Start()
     {
         StartCoroutine(spawnWave());
+    }
+
+    void Update() {
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 100 && !spawnEraserOnHit){
+            spawnEraserOnHit = true;
+            spawnEnemyEraser();
+        }
     }
 
     private void spawnEnemyPencil(){
@@ -41,7 +50,7 @@ public class EnemySpawn : MonoBehaviour
                 }
             }
             for(int i = 0; i < 2; i++){
-                yield return new WaitForSeconds(spawnTime + 1.5f);
+                yield return new WaitForSeconds(spawnTime + a);
                 spawnEnemyPaper();
             }
             for(int i = 0; i < 1; i++){
