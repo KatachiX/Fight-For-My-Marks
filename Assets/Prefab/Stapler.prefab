@@ -158,13 +158,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     curHealth: 100
-    damage: 10
   team:
     serializedVersion: 2
     m_Bits: 1024
-  enemy:
-    serializedVersion: 2
-    m_Bits: 2048
+  Team: Ally
   fireDetection: {fileID: 959508951113658441}
   Unit: {fileID: 959508951113658438}
   Bullet: {fileID: 5334826544187734050, guid: b276b18b39c229d478dfd0a1a12634f5, type: 3}

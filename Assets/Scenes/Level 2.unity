@@ -3061,7 +3061,7 @@ MonoBehaviour:
 
 
 
-    40'
+    30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
   m_sharedMaterial: {fileID: 2131063601952677551, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
@@ -3199,7 +3199,7 @@ MonoBehaviour:
 
 
 
-    70'
+    60'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
   m_sharedMaterial: {fileID: 2131063601952677551, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}

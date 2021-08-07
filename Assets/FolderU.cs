@@ -15,7 +15,7 @@ public class FolderU : MonoBehaviour
     private bool disableAtk = false;
     private WaitForSeconds atkCd = new WaitForSeconds(10f);
 
-    public LayerMask team;
+    public string Team;
 
     public GameObject paper;
 
@@ -50,7 +50,11 @@ public class FolderU : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
-            MoneyManager.instance.ChangeMoney(0);
+            if (Team == "Enemy") // Reward player with stamina and money upon defeating enemy
+            {
+                MoneyManager.instance.ChangeMoney(0);
+                StaminaBar.instance.AddStamina(10);
+            }
         }
     }
 }

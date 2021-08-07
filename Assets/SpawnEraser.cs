@@ -27,7 +27,7 @@ public class SpawnEraser : MonoBehaviour, IClickable
     public void Click()
     {
         Debug.Log("Spawn Eraser");
-        if (StaminaBar.instance.UseStamina(40))
+        if (StaminaBar.instance.UseStamina(30))
         {
             spawnEraser();
         }

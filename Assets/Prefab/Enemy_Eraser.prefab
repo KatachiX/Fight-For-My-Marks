@@ -158,9 +158,7 @@ MonoBehaviour:
   stats:
     curHealth: 70
     damage: 20
-  team:
-    serializedVersion: 2
-    m_Bits: 2048
+  Team: Enemy
   hit: {fileID: 2166878365741616347, guid: 287441cb510015c4997670b105746667, type: 3}
 --- !u!95 &1550134834031458061
 Animator:

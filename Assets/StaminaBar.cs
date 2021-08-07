@@ -59,6 +59,18 @@ public class StaminaBar : MonoBehaviour
         }
     }
 
+    public void AddStamina(int amt)
+    {
+        if(curStamina + amt > maxStamina)
+        {
+            curStamina = maxStamina;
+        }
+        else
+        {
+            curStamina += amt;
+        }
+    }
+
     private IEnumerator RechargeStamina()
     {
         while(curStamina < maxStamina)

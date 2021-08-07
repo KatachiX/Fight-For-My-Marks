@@ -17,7 +17,7 @@ public class Stapler : MonoBehaviour
     private WaitForSeconds atkCd = new WaitForSeconds(5f);
 
     public LayerMask team;
-    public LayerMask enemy;
+    public string Team;
     public Collider2D fireDetection;
     public GameObject Unit;
     public GameObject Bullet;
@@ -67,7 +67,11 @@ public class Stapler : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
-            MoneyManager.instance.ChangeMoney(70);
+            if (Team == "Enemy") // Reward player with stamina and money upon defeating enemy
+            {
+                MoneyManager.instance.ChangeMoney(10);
+                StaminaBar.instance.AddStamina(10);
+            }
         }
     }
 }

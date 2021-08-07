@@ -27,7 +27,7 @@ public class SpawnStapler : MonoBehaviour, IClickable
     public void Click()
     {
         Debug.Log("Spawn Stapler");
-        if (StaminaBar.instance.UseStamina(70))
+        if (StaminaBar.instance.UseStamina(60))
         {
             spawnStapler();
         }

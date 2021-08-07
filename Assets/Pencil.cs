@@ -15,7 +15,7 @@ public class Pencil : MonoBehaviour
     private bool disableAtk = false;
     private WaitForSeconds atkCd = new WaitForSeconds(5f);
 
-    public LayerMask team;
+    public string Team;
 
     public GameObject hit;
 
@@ -102,7 +102,11 @@ public class Pencil : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
-            MoneyManager.instance.ChangeMoney(30);
+            if (Team == "Enemy") // Reward player with stamina and money upon defeating enemy
+            {
+                MoneyManager.instance.ChangeMoney(10);
+                StaminaBar.instance.AddStamina(10);
+            }
         }
     }
 }

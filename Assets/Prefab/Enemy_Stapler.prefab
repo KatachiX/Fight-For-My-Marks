@@ -161,9 +161,7 @@ MonoBehaviour:
   team:
     serializedVersion: 2
     m_Bits: 2048
-  enemy:
-    serializedVersion: 2
-    m_Bits: 1024
+  Team: Enemy
   fireDetection: {fileID: 959508951113658441}
   Unit: {fileID: 959508951113658438}
   Bullet: {fileID: 5334826544187734050, guid: 290d28d8e1c1695489a3f20ac01c18f4, type: 3}

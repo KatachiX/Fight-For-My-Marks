@@ -15,7 +15,7 @@ public class Eraser : MonoBehaviour
     private bool disableAtk = false;
     private WaitForSeconds atkCd = new WaitForSeconds(5f);
 
-    public LayerMask team;
+    public string Team;
 
     public GameObject hit;
 
@@ -43,7 +43,7 @@ public class Eraser : MonoBehaviour
         if (_paper != null && !disableAtk)
         {
             hitAnimation(_paper.transform);
-            _paper.TakeDamage(stats.damage); // Enemy paper takes damage / 2
+            _paper.TakeDamage(stats.damage / 2); // Enemy paper takes damage / 2
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());
@@ -102,7 +102,11 @@ public class Eraser : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
-            MoneyManager.instance.ChangeMoney(40);
+            if (Team == "Enemy") // Reward player with stamina and money upon defeating enemy
+            {
+                MoneyManager.instance.ChangeMoney(10);
+                StaminaBar.instance.AddStamina(10);
+            }
         }
     }
 }

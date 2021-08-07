@@ -3062,7 +3062,7 @@ MonoBehaviour:
   enemyEraserPrefab: {fileID: 1550134834031458058, guid: 5b56fbbf5e63eda42bb7cae8aaea4831, type: 3}
   enemyBase: {fileID: 1353496399}
   spawnTime: 8
-  spawnFirstEraser: 0
+  spawnEraserOnHit: 0
 --- !u!1 &1416316393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,7 +3404,7 @@ MonoBehaviour:
 
 
 
-    40'
+    30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
   m_sharedMaterial: {fileID: 2131063601952677551, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
@@ -3542,7 +3542,7 @@ MonoBehaviour:
 
 
 
-    70'
+    60'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
   m_sharedMaterial: {fileID: 2131063601952677551, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
