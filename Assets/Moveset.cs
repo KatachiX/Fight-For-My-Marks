@@ -24,7 +24,7 @@ public class Moveset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pathIsClear && !cc.IsTouchingLayers(enemy))
+        if (pathIsClear)
         {
             Move();
         }
@@ -47,6 +47,16 @@ public class Moveset : MonoBehaviour
     }
 
     void ResetOnHit()
+    {
+        pathIsClear = true;
+    }
+
+    public void PauseMove()
+    {
+        pathIsClear = false;
+    }
+
+    public void ResumeMove()
     {
         pathIsClear = true;
     }

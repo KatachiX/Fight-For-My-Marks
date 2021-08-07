@@ -58,6 +58,16 @@ public class Eraser : MonoBehaviour
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());
         }
+
+        Stapler _stapler = col.collider.GetComponent<Stapler>();
+        if (_stapler != null && !disableAtk)
+        {
+            hitAnimation(_stapler.transform);
+            _stapler.TakeDamage(stats.damage); // Enemy stapler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit();
+            StartCoroutine(startAtkCd());
+        }
     }
 
     void hitAnimation(Transform t)
