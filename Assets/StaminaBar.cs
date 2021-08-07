@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StaminaBar : MonoBehaviour
 {
     public Slider staminaBar;
+
+    public TextMeshProUGUI text;
 
     private int maxStamina = 100;
     private int curStamina;
@@ -26,6 +29,11 @@ public class StaminaBar : MonoBehaviour
         curStamina = maxStamina;
         staminaBar.maxValue = maxStamina;
         staminaBar.value = maxStamina;
+    }
+
+    void Update()
+    {
+        text.text = curStamina + "/" + maxStamina;
     }
 
     public bool UseStamina(int amt)
