@@ -47,6 +47,7 @@ public class FolderU : MonoBehaviour
     public void TakeDamage(int damage)
     {
         stats.curHealth -= damage;
+        StartCoroutine(showTakeDamage());
         if (stats.curHealth <= 0)
         {
             GameMaster.Destroy(this.gameObject);
@@ -56,5 +57,12 @@ public class FolderU : MonoBehaviour
                 StaminaBar.instance.AddStamina(10);
             }
         }
+    }
+
+    IEnumerator showTakeDamage()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(0.5f);
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPaperPrefab;
     public GameObject enemyEraserPrefab;
     public GameObject enemyBase;
-    public float spawnTime = 8.0f;
+    public float spawnTime = 10f;
     // Start is called before the first frame update
     public bool spawnEraserOnHit = false;
     void Start()

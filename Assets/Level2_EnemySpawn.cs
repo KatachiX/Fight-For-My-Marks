@@ -27,7 +27,7 @@ public class Level2_EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyBase.GetComponent<Base>().stats.curHealth != 200 && phase == 1)
+        if(enemyBase.GetComponent<Base>().stats.curHealth != 500 && phase == 1)
         {
             Debug.Log("phase 2");
             phase = 2;
