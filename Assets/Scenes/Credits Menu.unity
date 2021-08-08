@@ -371,9 +371,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " This game was created by Xavier Teo And Chung Tze Siong.\n Backgrounds:\n
-    - Main Menu (From DeviantArt by @Vangell)\n - Level Selector (From DeviantArt
-    by @LanaOnTheRoad)\n - Levels (By Xavier)\n Sprites are done by Xavier"
+  m_text: " This game was created by Xavier Teo And Chung Tze Siong.\n Backgrounds:\n-
+    Main Menu (From DeviantArt by @Vangell)\n - Level Selector (From DeviantArt by
+    @LanaOnTheRoad)\n - Levels (By Xavier)\n Sprites are done by Xavier\n Background
+    Music (Jeremy Blake - Powerup!)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
   m_sharedMaterial: {fileID: 2131063601952677551, guid: b2a3875f65b44ec4e9217057e08ee897, type: 2}
