@@ -2153,9 +2153,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 862.6086, y: 626.9565}
+  m_AnchoredPosition: {x: 105.94929, y: 731.39246}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.9492753, y: 1.0805153}
+  m_Pivot: {x: 0.5551819, y: 1.1772152}
 --- !u!114 &624085321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,7 +2841,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1606905669}
         m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
         m_MethodName: ExitLevelButton
         m_Mode: 1
@@ -3418,7 +3418,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1606905669}
         m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
         m_MethodName: TryAgainButton
         m_Mode: 1
@@ -4405,7 +4405,7 @@ MonoBehaviour:
   stats:
     curHealth: 200
     maxHealth: 200
-  text: {fileID: 0}
+  text: {fileID: 31991007}
 --- !u!114 &1353496404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4422,7 +4422,7 @@ MonoBehaviour:
   enemyPaperPrefab: {fileID: 7831306352216620615, guid: 3c68d9c854481f3469266ab49f14b448, type: 3}
   enemyEraserPrefab: {fileID: 1550134834031458058, guid: 5b56fbbf5e63eda42bb7cae8aaea4831, type: 3}
   enemyBase: {fileID: 1353496399}
-  spawnTime: 8
+  spawnTime: 10
   spawnEraserOnHit: 0
 --- !u!1 &1366788544
 GameObject:
@@ -4645,7 +4645,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1606905669}
         m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
         m_MethodName: NextLevelButton
         m_Mode: 1
@@ -5116,7 +5116,7 @@ MonoBehaviour:
   stats:
     curHealth: 200
     maxHealth: 200
-  text: {fileID: 0}
+  text: {fileID: 1923173173}
 --- !u!70 &1517198620
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6597,7 +6597,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1606905669}
         m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
         m_MethodName: ExitLevelButton
         m_Mode: 1
