@@ -27,7 +27,7 @@ public class MoneyManager : MonoBehaviour
 
     public bool UseMoney (int moneyValue)
     {
-        if (moneyValue < money)
+        if (moneyValue <= money)
         {
             money -= moneyValue;
             text.text = money.ToString();

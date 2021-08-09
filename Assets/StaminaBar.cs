@@ -34,6 +34,7 @@ public class StaminaBar : MonoBehaviour
     void Update()
     {
         text.text = curStamina + "/" + maxStamina;
+        staminaBar.value = curStamina;
     }
 
     public bool UseStamina(int amt)
@@ -41,7 +42,6 @@ public class StaminaBar : MonoBehaviour
         if (curStamina - amt >= 0)
         {
             curStamina -= amt;
-            staminaBar.value = curStamina;
 
             if (recharge != null)
             {
@@ -76,7 +76,6 @@ public class StaminaBar : MonoBehaviour
         while(curStamina < maxStamina)
         {
             curStamina += 1;
-            staminaBar.value = curStamina;
             yield return rechargeTick;
         }
         recharge = null;
