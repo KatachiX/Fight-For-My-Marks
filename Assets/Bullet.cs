@@ -55,6 +55,13 @@ public class Bullet : MonoBehaviour
             _moveset.OnHit();
             GameMaster.Destroy(this.gameObject);
         }
+
+        Bullet _Bullet = col.collider.GetComponent<Bullet>();
+        if (_Bullet != null)
+        {
+            GameMaster.Destroy(_Bullet.gameObject);
+            GameMaster.Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame

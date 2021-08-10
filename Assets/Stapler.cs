@@ -6,7 +6,7 @@ public class Stapler : MonoBehaviour
 {
     [System.Serializable]
     public class StaplerStats {
-        public int curHealth = 100;
+        public int curHealth = 30;
     }
 
     public StaplerStats stats = new StaplerStats();
@@ -26,8 +26,8 @@ public class Stapler : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col) 
     {
-        
-        if (col.gameObject.layer != this.gameObject.layer)
+        Debug.Log(col.gameObject.name);
+        if (col.gameObject.layer != this.gameObject.layer && col.gameObject.name != "Detector")
         {
             if (!disableAtk)
             {
