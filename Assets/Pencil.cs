@@ -68,6 +68,16 @@ public class Pencil : MonoBehaviour
             _moveset.OnHit();
             StartCoroutine(startAtkCd());
         }
+
+        FolderU _folderU = col.collider.GetComponent<FolderU>();
+        if (_folderU != null && !disableAtk)
+        {
+            hitAnimation(_folderU.transform);
+            _folderU.TakeDamage(stats.damage); // Enemy folder takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit();
+            StartCoroutine(startAtkCd());
+        }
     }
 
     void hitAnimation(Transform t)

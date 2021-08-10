@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5334826544187734076}
   - component: {fileID: 5334826544187734077}
   m_Layer: 10
-  m_Name: Stapler_Bullet
+  m_Name: Ally_Stapler_Bullet
   m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,7 +13,9 @@ public class FolderU : MonoBehaviour
     public FolderStats stats = new FolderStats();
     
     private bool disableAtk = false;
-    private WaitForSeconds atkCd = new WaitForSeconds(10f);
+    private WaitForSeconds atkCd = new WaitForSeconds(20f);
+
+    private WaitForSeconds atkCdEnemy = new WaitForSeconds(10f);
 
     public string Team;
 
@@ -23,8 +25,14 @@ public class FolderU : MonoBehaviour
     {
         disableAtk = true;
 
-        yield return atkCd;
-
+        if (Team == "Ally")
+        {
+            yield return atkCd;
+        }
+        else
+        {
+            yield return atkCdEnemy;
+        }
         disableAtk = false;
     }
 

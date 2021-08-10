@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3663713455430572978}
   - component: {fileID: 3663713455430572981}
   m_Layer: 10
-  m_Name: Stapler
+  m_Name: Ally_Stapler
   m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
