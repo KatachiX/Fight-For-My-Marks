@@ -20,15 +20,6 @@ public class Bullet : MonoBehaviour
             GameMaster.Destroy(this.gameObject);
         }
 
-        Ruler _ruler = col.collider.GetComponent<Ruler>();
-        if (_ruler != null)
-        {
-            _ruler.TakeDamage(damage); // Enemy ruler takes damage
-            Moveset _moveset = col.collider.GetComponent<Moveset>();
-            _moveset.OnHit();
-            GameMaster.Destroy(this.gameObject);
-        }
-
         Paper _paper = col.collider.GetComponent<Paper>();
         if (_paper != null)
         {
@@ -56,10 +47,28 @@ public class Bullet : MonoBehaviour
             GameMaster.Destroy(this.gameObject);
         }
 
+        Ruler _ruler = col.collider.GetComponent<Ruler>();
+        if (_ruler != null)
+        {
+            _ruler.TakeDamage(damage); // Enemy ruler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit();
+            GameMaster.Destroy(this.gameObject);
+        }
+
         Stapler _stapler = col.collider.GetComponent<Stapler>();
         if (_stapler != null)
         {
             _stapler.TakeDamage(damage); // Enemy stapler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit();
+            GameMaster.Destroy(this.gameObject);
+        }
+
+        FolderU _folder = col.collider.GetComponent<FolderU>();
+        if (_folder != null)
+        {
+            _folder.TakeDamage(damage); // Enemy folder takes damage
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit();
             GameMaster.Destroy(this.gameObject);

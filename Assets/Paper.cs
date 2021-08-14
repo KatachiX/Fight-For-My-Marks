@@ -29,15 +29,6 @@ public class Paper : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
-        Ruler _ruler = col.collider.GetComponent<Ruler>();
-        if (_ruler != null && !disableAtk)
-        {
-            hitAnimation(_ruler.transform);
-            _ruler.TakeDamage(stats.damage); // Enemy ruler takes damage
-            Moveset _moveset = col.collider.GetComponent<Moveset>();
-            _moveset.OnHit(); 
-        }
-
         Paper _paper = col.collider.GetComponent<Paper>();
         if (_paper != null && !disableAtk)
         {
@@ -68,11 +59,30 @@ public class Paper : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
+        Ruler _ruler = col.collider.GetComponent<Ruler>();
+        if (_ruler != null && !disableAtk)
+        {
+            hitAnimation(_ruler.transform);
+            _ruler.TakeDamage(stats.damage); // Enemy ruler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
+        }
+
         Stapler _stapler = col.collider.GetComponent<Stapler>();
         if (_stapler != null && !disableAtk)
         {
             hitAnimation(_stapler.transform);
             _stapler.TakeDamage(stats.damage); // Enemy stapler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit();
+            StartCoroutine(startAtkCd());
+        }
+
+        FolderU _folderU = col.collider.GetComponent<FolderU>();
+        if (_folderU != null && !disableAtk)
+        {
+            hitAnimation(_folderU.transform);
+            _folderU.TakeDamage(stats.damage); // Enemy folder takes damage
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit();
             StartCoroutine(startAtkCd());

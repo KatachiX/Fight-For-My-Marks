@@ -61,15 +61,6 @@ public class Ruler : MonoBehaviour
                     _base.TakeDamage(stats.damage); // Enemy base takes damage
                 }
 
-                Ruler _ruler = col.GetComponent<Ruler>();
-                if (_ruler != null && !disableAtk)
-                {
-                    hitAnimation(_ruler.transform);
-                    _ruler.TakeDamage(stats.damage); // Enemy ruler takes damage
-                    Moveset _moveset = col.GetComponent<Moveset>();
-                    _moveset.OnHit(); 
-                }
-
                 Paper _paper = col.GetComponent<Paper>();
                 if (_paper != null && !disableAtk)
                 {
@@ -95,6 +86,15 @@ public class Ruler : MonoBehaviour
                     _pencil.TakeDamage(stats.damage); // Enemy pencil takes damage
                     Moveset _moveset = col.GetComponent<Moveset>();
                     _moveset.OnHit();
+                }
+
+                Ruler _ruler = col.GetComponent<Ruler>();
+                if (_ruler != null && !disableAtk)
+                {
+                    hitAnimation(_ruler.transform);
+                    _ruler.TakeDamage(stats.damage); // Enemy ruler takes damage
+                    Moveset _moveset = col.GetComponent<Moveset>();
+                    _moveset.OnHit(); 
                 }
 
                 Stapler _stapler = col.GetComponent<Stapler>();
