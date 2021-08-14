@@ -54,6 +54,8 @@ public class Level2_EnemySpawn : MonoBehaviour
     }
 
     IEnumerator spawnWave(){
+        yield return new WaitForSeconds(5.0f);
+
         spawnEnemyPaper();
 
         yield return new WaitForSeconds(10f);
