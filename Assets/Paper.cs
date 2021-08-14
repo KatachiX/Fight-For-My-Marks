@@ -29,6 +29,25 @@ public class Paper : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
+        Ruler _ruler = col.collider.GetComponent<Ruler>();
+        if (_ruler != null && !disableAtk)
+        {
+            hitAnimation(_ruler.transform);
+            _ruler.TakeDamage(stats.damage); // Enemy ruler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
+        }
+
+        Paper _paper = col.collider.GetComponent<Paper>();
+        if (_paper != null && !disableAtk)
+        {
+            hitAnimation(_paper.transform);
+            _paper.TakeDamage(stats.damage); // Enemy paper takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
+            StartCoroutine(startAtkCd());
+        }
+
         Eraser _eraser = col.collider.GetComponent<Eraser>();
         if (_eraser != null && !disableAtk)
         {
@@ -44,16 +63,6 @@ public class Paper : MonoBehaviour
         {
             hitAnimation(_pencil.transform);
             _pencil.TakeDamage(stats.damage / 2); // Enemy pencil takes damage / 2
-            Moveset _moveset = col.collider.GetComponent<Moveset>();
-            _moveset.OnHit(); 
-            StartCoroutine(startAtkCd());
-        }
-
-                Paper _paper = col.collider.GetComponent<Paper>();
-        if (_paper != null && !disableAtk)
-        {
-            hitAnimation(_paper.transform);
-            _paper.TakeDamage(stats.damage); // Enemy paper takes damage
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());

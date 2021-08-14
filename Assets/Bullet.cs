@@ -20,6 +20,15 @@ public class Bullet : MonoBehaviour
             GameMaster.Destroy(this.gameObject);
         }
 
+        Ruler _ruler = col.collider.GetComponent<Ruler>();
+        if (_ruler != null)
+        {
+            _ruler.TakeDamage(damage); // Enemy ruler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit();
+            GameMaster.Destroy(this.gameObject);
+        }
+
         Paper _paper = col.collider.GetComponent<Paper>();
         if (_paper != null)
         {
@@ -29,7 +38,7 @@ public class Bullet : MonoBehaviour
             GameMaster.Destroy(this.gameObject);
         }
 
-                Eraser _eraser = col.collider.GetComponent<Eraser>();
+        Eraser _eraser = col.collider.GetComponent<Eraser>();
         if (_eraser != null)
         {
             _eraser.TakeDamage(damage); // Enemy Eraser takes damage

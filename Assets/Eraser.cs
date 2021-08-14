@@ -29,14 +29,13 @@ public class Eraser : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
-        Pencil _pencil = col.collider.GetComponent<Pencil>();
-        if (_pencil != null && !disableAtk)
+        Ruler _ruler = col.collider.GetComponent<Ruler>();
+        if (_ruler != null && !disableAtk)
         {
-            hitAnimation(_pencil.transform);
-            _pencil.TakeDamage(stats.damage * 3); // Enemy pencil takes damage * 3
+            hitAnimation(_ruler.transform);
+            _ruler.TakeDamage(stats.damage); // Enemy ruler takes damage
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
-            StartCoroutine(startAtkCd());
         }
 
         Paper _paper = col.collider.GetComponent<Paper>();
@@ -44,6 +43,16 @@ public class Eraser : MonoBehaviour
         {
             hitAnimation(_paper.transform);
             _paper.TakeDamage(stats.damage / 2); // Enemy paper takes damage / 2
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
+            StartCoroutine(startAtkCd());
+        }
+
+        Pencil _pencil = col.collider.GetComponent<Pencil>();
+        if (_pencil != null && !disableAtk)
+        {
+            hitAnimation(_pencil.transform);
+            _pencil.TakeDamage(stats.damage * 3); // Enemy pencil takes damage * 3
             Moveset _moveset = col.collider.GetComponent<Moveset>();
             _moveset.OnHit(); 
             StartCoroutine(startAtkCd());

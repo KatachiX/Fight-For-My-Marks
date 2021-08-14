@@ -21,7 +21,7 @@ public class SpawnFolder : MonoBehaviour, IClickable
     public void Click()
     {
         Debug.Log("Spawn Folder");
-        if (MoneyManager.instance.UseMoney(100))
+        if (MoneyManager.instance.UseMoney(200))
         {
             spawnFolder();
         }

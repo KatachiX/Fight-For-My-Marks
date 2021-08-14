@@ -29,6 +29,15 @@ public class Pencil : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
+        Ruler _ruler = col.collider.GetComponent<Ruler>();
+        if (_ruler != null && !disableAtk)
+        {
+            hitAnimation(_ruler.transform);
+            _ruler.TakeDamage(stats.damage); // Enemy ruler takes damage
+            Moveset _moveset = col.collider.GetComponent<Moveset>();
+            _moveset.OnHit(); 
+        }
+
         Paper _paper = col.collider.GetComponent<Paper>();
         if (_paper != null && !disableAtk)
         {
@@ -39,7 +48,7 @@ public class Pencil : MonoBehaviour
             StartCoroutine(startAtkCd());
         }
 
-                Eraser _eraser = col.collider.GetComponent<Eraser>();
+        Eraser _eraser = col.collider.GetComponent<Eraser>();
         if (_eraser != null && !disableAtk)
         {
             hitAnimation(_eraser.transform);
