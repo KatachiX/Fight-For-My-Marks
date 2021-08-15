@@ -11,16 +11,17 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyBase;
     public float spawnTime = 10f;
     // Start is called before the first frame update
-    public bool spawnEraserOnHit = false;
+    public bool spawnEnemyOnHit = false;
     void Start()
     {
         StartCoroutine(spawnWave());
     }
 
     void Update() {
-        if(enemyBase.GetComponent<Base>().stats.curHealth <= 100 && !spawnEraserOnHit){
-            spawnEraserOnHit = true;
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 100 && !spawnEnemyOnHit){
+            spawnEnemyOnHit = true;
             spawnEnemyEraser();
+            spawnEnemyPaper();
         }
     }
 

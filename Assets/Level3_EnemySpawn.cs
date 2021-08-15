@@ -81,12 +81,17 @@ public class Level3_EnemySpawn : MonoBehaviour
         spawnEnemyPencil();
         yield return interval;
 
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(50f);
 
         spawnEnemyEraser();
         yield return interval;
         spawnEnemyEraser();
         yield return interval;
+
+        while(true){
+            yield return new WaitForSeconds(10f);
+            spawnEnemyPencil();
+        }
     }
 
     IEnumerator spawnWave2(){
@@ -104,17 +109,29 @@ public class Level3_EnemySpawn : MonoBehaviour
         spawnEnemyEraser();
         yield return interval;
 
+        while(true){    
+            yield return new WaitForSeconds(14f);
+            spawnEnemyPencil();
+        }
     }
 
     IEnumerator spawnWave3(){
-
-        spawnEnemyPencil();
+        // spawn 8 pencils
+        for(int i = 0; i < 9; i++){
+            spawnEnemyPencil();
+            yield return interval;
+        }
+        yield return new WaitForSeconds(2.0f);
+        spawnEnemyFolder();
         yield return interval;
-        spawnEnemyPencil();
-        yield return interval;
-        spawnEnemyPencil();
-        yield return interval;
+        spawnEnemyFolder();
+        yield return new WaitForSeconds(3.0f);
         spawnEnemyStapler();
-                
+        yield return new WaitForSeconds(30f);
+
+        while(true){
+            spawnEnemyPencil();
+            yield return new WaitForSeconds(14f);
+        }
     }
 }

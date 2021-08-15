@@ -27,12 +27,20 @@ public class Level2_EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyBase.GetComponent<Base>().stats.curHealth != 500 && phase == 1)
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 450 && phase == 1)
         {
             Debug.Log("phase 2");
             phase = 2;
             StopCoroutine(spawnWave());
             StartCoroutine(spawnWave2());
+        }
+
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 250 && phase == 2)
+        {
+            Debug.Log("phase 3");
+            phase = 3;
+            StopCoroutine(spawnWave2());
+            StartCoroutine(spawnWave3());
         }
     }
 
@@ -83,6 +91,10 @@ public class Level2_EnemySpawn : MonoBehaviour
         yield return interval;
 
         yield return new WaitForSeconds(10f);
+        while(true){
+            spawnEnemyPencil();
+            yield return new WaitForSeconds(14f);
+        }
     }
 
     IEnumerator spawnWave2(){
@@ -110,6 +122,36 @@ public class Level2_EnemySpawn : MonoBehaviour
             spawnEnemyPaper();
 
             yield return new WaitForSeconds(15f);
+        }
+    }
+
+    IEnumerator spawnWave3(){
+        spawnEnemyPaper();
+        yield return interval;
+        spawnEnemyPencil();
+        yield return interval;
+        spawnEnemyEraser();
+        yield return interval;
+        spawnEnemyStapler();
+
+        yield return new WaitForSeconds(10f);
+        spawnEnemyStapler();
+        yield return new WaitForSeconds(5f);
+
+        spawnEnemyPencil();
+        yield return interval;
+        spawnEnemyPencil();
+        yield return interval;
+
+        while(true)
+        {
+            spawnEnemyPencil();
+
+            yield return new WaitForSeconds(10f);
+
+            spawnEnemyPaper();
+
+            yield return new WaitForSeconds(20f);
         }
     }
 }
