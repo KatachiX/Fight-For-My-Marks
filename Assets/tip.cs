@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class tip : MonoBehaviour
 {
+    public float wait = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +14,7 @@ public class tip : MonoBehaviour
 
     IEnumerator Tip()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(wait);
 
         GameMaster.Destroy(this.gameObject);
     }
