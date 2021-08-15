@@ -28,12 +28,22 @@ public class Level5_EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyBase.GetComponent<Base>().stats.curHealth < 1000 && phase == 1)
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 750 && phase == 1)
         {
             Debug.Log("phase 2");
             phase = 2;
             StopCoroutine(spawnWave());
-            //StartCoroutine(spawnWave2());
+            StartCoroutine(spawnWave2());
+        }
+
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 500 && phase == 2)
+        {
+            Debug.Log("phase 3");
+            phase = 3;
+            StopCoroutine(spawnWave2());
+            StartCoroutine(spawnWave3());
+
+            enemyBase.GetComponent<Base>().stats.curHealth = 1000;
         }
     }
 
@@ -107,8 +117,77 @@ public class Level5_EnemySpawn : MonoBehaviour
         yield return interval;
     }
 
-    // IEnumerator spawnWave2()
-    // {
+    IEnumerator spawnWave2()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            spawnEnemyRuler();
+            yield return interval;
+        }
 
-    // }
+        yield return new WaitForSeconds(10.0f);
+
+        for(int i = 0; i < 10; i++)
+        {
+            spawnEnemyEraser();
+            yield return interval;
+        }
+
+        yield return new WaitForSeconds(1.0f);
+
+        for(int i = 0; i < 5; i++)
+        {
+            spawnEnemyPaper();
+            yield return interval;
+        }
+
+        yield return new WaitForSeconds(1.0f);
+
+        spawnEnemyStapler();
+        yield return interval;
+        spawnEnemyStapler();
+        yield return interval;
+
+        yield return new WaitForSeconds(10.0f);
+
+        for(int i = 0; i < 10; i++)
+        {
+            spawnEnemyPaper();
+            yield return interval;
+            spawnEnemyEraser();
+            yield return interval;
+            spawnEnemyPencil();
+            yield return interval;
+        }
+    }
+
+    IEnumerator spawnWave3()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            spawnEnemyPaper();
+            yield return interval;
+        }
+
+        yield return new WaitForSeconds(2.0f);
+
+        for(int i = 0; i < 4; i++)
+        {
+            spawnEnemyFolder();
+            yield return interval;
+        }
+
+        yield return new WaitForSeconds(5.0f);
+
+        spawnEnemyRuler();
+        yield return interval;
+        spawnEnemyRuler();
+        yield return interval;
+
+        for(int i = 0; i < 10; i++)
+        {
+            spawnEnemyStapler();
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
 }
