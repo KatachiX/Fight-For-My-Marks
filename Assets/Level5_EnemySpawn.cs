@@ -10,6 +10,7 @@ public class Level5_EnemySpawn : MonoBehaviour
     public GameObject enemyStaplerPrefab;
     public GameObject enemyFolderPrefab;
     public GameObject enemyRulerPrefab;
+    public GameObject enemyBossPrefab;
     public GameObject enemyBase;
 
     public WaitForSeconds interval = new WaitForSeconds(0.25f);
@@ -28,7 +29,7 @@ public class Level5_EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyBase.GetComponent<Base>().stats.curHealth <= 750 && phase == 1)
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 1500 && phase == 1)
         {
             Debug.Log("phase 2");
             phase = 2;
@@ -36,7 +37,7 @@ public class Level5_EnemySpawn : MonoBehaviour
             StartCoroutine(spawnWave2());
         }
 
-        if(enemyBase.GetComponent<Base>().stats.curHealth <= 500 && phase == 2)
+        if(enemyBase.GetComponent<Base>().stats.curHealth <= 1000 && phase == 2)
         {
             Debug.Log("phase 3");
             phase = 3;
@@ -69,6 +70,11 @@ public class Level5_EnemySpawn : MonoBehaviour
         folder.transform.position = new Vector2(vectX, vectY);
     }
 
+    private void spawnEnemyBoss(){
+        GameObject boss = Instantiate(enemyBossPrefab) as GameObject;
+        boss.transform.position = new Vector2(vectX, vectY);
+    }
+
     private void spawnEnemyRuler(){
         GameObject ruler = Instantiate(enemyRulerPrefab) as GameObject;
         ruler.transform.position = new Vector2(vectX, vectY);
@@ -77,6 +83,8 @@ public class Level5_EnemySpawn : MonoBehaviour
     IEnumerator spawnWave()
     {
         yield return new WaitForSeconds(5.0f);
+
+        spawnEnemyBoss();
         
         for(int i = 20; i > 0; i--)
         {
@@ -86,6 +94,8 @@ public class Level5_EnemySpawn : MonoBehaviour
 
             yield return new WaitForSeconds(wait);
         }
+
+        yield return new WaitForSeconds(20.0f);
 
         spawnEnemyFolder();
         yield return interval;
@@ -125,7 +135,7 @@ public class Level5_EnemySpawn : MonoBehaviour
             yield return interval;
         }
 
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(20.0f);
 
         for(int i = 0; i < 10; i++)
         {
@@ -148,17 +158,34 @@ public class Level5_EnemySpawn : MonoBehaviour
         spawnEnemyStapler();
         yield return interval;
 
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(20.0f);
 
-        for(int i = 0; i < 10; i++)
-        {
-            spawnEnemyPaper();
-            yield return interval;
-            spawnEnemyEraser();
-            yield return interval;
-            spawnEnemyPencil();
-            yield return interval;
-        }
+        // If I use a for loop, coroutine stop DOES NOT stop the for loop
+        // Tried fixing but this is the best for my sanity
+        spawnEnemyPaper();              
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyEraser();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyPencil();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyPaper();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyEraser();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyPencil();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyPaper();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyEraser();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyPencil();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyPaper();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyEraser();
+        yield return new WaitForSeconds(1.0f);
+        spawnEnemyPencil();
+        yield return new WaitForSeconds(1.0f);
     }
 
     IEnumerator spawnWave3()
@@ -171,23 +198,17 @@ public class Level5_EnemySpawn : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        for(int i = 0; i < 4; i++)
-        {
-            spawnEnemyFolder();
-            yield return interval;
-        }
-
-        yield return new WaitForSeconds(5.0f);
-
         spawnEnemyRuler();
         yield return interval;
         spawnEnemyRuler();
         yield return interval;
 
-        for(int i = 0; i < 10; i++)
+        while(true)
         {
-            spawnEnemyStapler();
-            yield return new WaitForSeconds(0.5f);
+            spawnEnemyPencil();
+            yield return new WaitForSeconds(5.0f);
+            spawnEnemyPaper();
+            yield return new WaitForSeconds(5.0f);
         }
     }
 }
