@@ -35,13 +35,13 @@ public class Level2_EnemySpawn : MonoBehaviour
             StartCoroutine(spawnWave2());
         }
 
-        if(enemyBase.GetComponent<Base>().stats.curHealth <= 250 && phase == 2)
-        {
-            Debug.Log("phase 3");
-            phase = 3;
-            StopCoroutine(spawnWave2());
-            StartCoroutine(spawnWave3());
-        }
+        // if(enemyBase.GetComponent<Base>().stats.curHealth <= 250 && phase == 2)
+        // {
+        //     Debug.Log("phase 3");
+        //     phase = 3;
+        //     StopCoroutine(spawnWave2());
+        //     StartCoroutine(spawnWave3());
+        // }
     }
 
     private void spawnEnemyPencil(){
@@ -90,11 +90,11 @@ public class Level2_EnemySpawn : MonoBehaviour
         spawnEnemyEraser();
         yield return interval;
 
-        yield return new WaitForSeconds(10f);
-        while(true){
-            spawnEnemyPencil();
-            yield return new WaitForSeconds(14f);
-        }
+        // yield return new WaitForSeconds(10f); // too tough
+        // while(true){
+        //     spawnEnemyPencil();
+        //     yield return new WaitForSeconds(14f);
+        // }
     }
 
     IEnumerator spawnWave2(){
@@ -125,33 +125,33 @@ public class Level2_EnemySpawn : MonoBehaviour
         }
     }
 
-    IEnumerator spawnWave3(){
-        spawnEnemyPaper();
-        yield return interval;
-        spawnEnemyPencil();
-        yield return interval;
-        spawnEnemyEraser();
-        yield return interval;
-        spawnEnemyStapler();
+    // IEnumerator spawnWave3(){
+    //     spawnEnemyPaper();
+    //     yield return interval;
+    //     spawnEnemyPencil();
+    //     yield return interval;
+    //     spawnEnemyEraser();
+    //     yield return interval;
+    //     spawnEnemyStapler();
 
-        yield return new WaitForSeconds(10f);
-        spawnEnemyStapler();
-        yield return new WaitForSeconds(5f);
+    //     yield return new WaitForSeconds(10f);
+    //     spawnEnemyStapler();
+    //     yield return new WaitForSeconds(5f);
 
-        spawnEnemyPencil();
-        yield return interval;
-        spawnEnemyPencil();
-        yield return interval;
+    //     spawnEnemyPencil();
+    //     yield return interval;
+    //     spawnEnemyPencil();
+    //     yield return interval;
 
-        while(true)
-        {
-            spawnEnemyPencil();
+    //     while(true)
+    //     {
+    //         spawnEnemyPencil();
 
-            yield return new WaitForSeconds(10f);
+    //         yield return new WaitForSeconds(10f);
 
-            spawnEnemyPaper();
+    //         spawnEnemyPaper();
 
-            yield return new WaitForSeconds(20f);
-        }
-    }
+    //         yield return new WaitForSeconds(20f);
+    //     }
+    // }
 }
