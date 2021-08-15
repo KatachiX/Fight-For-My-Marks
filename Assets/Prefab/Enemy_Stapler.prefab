@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    curHealth: 30
+    curHealth: 100
   team:
     serializedVersion: 2
     m_Bits: 2048

@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     curHealth: 150
-    damage: 10
+    damage: 5
   Team: Ally
   hit: {fileID: 2166878365741616347, guid: 287441cb510015c4997670b105746667, type: 3}
 --- !u!95 &7115414952273775153

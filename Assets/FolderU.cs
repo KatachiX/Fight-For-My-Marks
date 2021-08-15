@@ -59,10 +59,10 @@ public class FolderU : MonoBehaviour
         if (stats.curHealth <= 0)
         {
             StartCoroutine(die());
-            if (Team == "Enemy") // Reward player with stamina and money upon defeating enemy
+            if (Team == "Enemy") // Reward player with money upon defeating enemy
             {
-                MoneyManager.instance.ChangeMoney(0);
-                StaminaBar.instance.AddStamina(10);
+                MoneyManager.instance.ChangeMoney(20);
+                StaminaBar.instance.AddStamina(0);
             }
         }
     }
