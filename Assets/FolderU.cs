@@ -58,13 +58,23 @@ public class FolderU : MonoBehaviour
         StartCoroutine(showTakeDamage());
         if (stats.curHealth <= 0)
         {
-            GameMaster.Destroy(this.gameObject);
+            StartCoroutine(die());
             if (Team == "Enemy") // Reward player with stamina and money upon defeating enemy
             {
                 MoneyManager.instance.ChangeMoney(0);
                 StaminaBar.instance.AddStamina(10);
             }
         }
+    }
+
+    IEnumerator die()
+    {
+        Moveset moveset = this.gameObject.GetComponent<Moveset>();
+        moveset.Die();
+
+        yield return new WaitForSeconds(0.5f);
+
+        GameMaster.Destroy(this.gameObject);
     }
 
     IEnumerator showTakeDamage()

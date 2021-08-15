@@ -39,6 +39,12 @@ public class Moveset : MonoBehaviour
         rb.velocity = new Vector2(moveSpeed * Time.fixedDeltaTime, rb.velocity.y);
     }
 
+    public void Die()
+    {
+        pathIsClear = false;
+        rb.velocity = new Vector2(0, 10);
+    }
+
     public void OnHit()
     {
         pathIsClear = false;
